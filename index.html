@@ -492,7 +492,10 @@
         } ,
     ];
 
-    var colors = d3.scale.category20();
+
+  var colors = d3.scale.ordinal()
+       .range(["#10A6D3", "#1098C2", "#0E8CB4", "#15B2E1", "#10A5D1"]);
+
     var keyColor = function(d, i) {return colors(d.key)};
 
     var chart;
@@ -501,7 +504,7 @@
             .useInteractiveGuideline(true)
             .x(function(d) { return d[0] })
             .y(function(d) { return d[1] })
-            .controlLabels({stacked: "Stacked"})
+     .controlLabels({stacked: "Apilar", stream: "Corriente", expanded:"Porcentaje"})
             .color(keyColor)
             .duration(300);
 
